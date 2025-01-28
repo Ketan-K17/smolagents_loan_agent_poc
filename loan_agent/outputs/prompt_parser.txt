@@ -24,17 +24,6 @@ vectordb_query: {"vectordb_query": "What is the API endpoint for retrieving movi
 ENSURE that your answer only has the JSON object, and no other text accompanying it.
 
 Here is the user query you need to analyse: 
-I need to find the coordinates of the ISS>
-
-
-HERE'S THE VECTORDB QUERY: What is the API endpoint for retrieving the current coordinates of the International Space Station?
-
-
-HERE'S THE LIST OF DOCS:
-1. {"wheretheiss": {"description": "This API provides real-time tracking information for the International Space Station and other satellites.", "base_url": "https://api.wheretheiss.at/v1", "endpoints": {"satellites": {"path": "/satellites", "description": "Returns a list of satellites with their common names and NORAD catalog IDs.", "parameters": {}}, "satellite_by_id": {"path": "/satellites/{id}", "description": "Returns position, velocity, and other related information about a satellite for a given point in
-2. "Returns position, velocity, and other related information about a satellite for a given point in time.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "units": {"description": "Units for measurements (kilometers or miles).", "required": false, "default": "kilometers"}, "timestamp": {"description": "Specific timestamp for orbital position.", "required": false, "default": "current timestamp"}}}, "satellite_positions": {"path": "/satellites/{id}/positions",
-3. false, "default": "json"}}}, "coordinates": {"path": "/coordinates/{lat},{lon}", "description": "Returns position, current time offset, country code, and timezone ID for given coordinates.", "parameters": {"lat": {"description": "Latitude of the location.", "required": true}, "lon": {"description": "Longitude of the location.", "required": true}}}}}}
-4. "default": "current timestamp"}}}, "satellite_positions": {"path": "/satellites/{id}/positions", "description": "Returns a list of positions and velocities for a satellite at specified timestamps.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "timestamps": {"description": "Comma-delimited list of timestamps (up to 10).", "required": true}, "units": {"description": "Units for measurements (kilometers or miles).", "required": false, "default":
-5. {"description": "Units for measurements (kilometers or miles).", "required": false, "default": "kilometers"}}}, "satellite_tles": {"path": "/satellites/{id}/tles", "description": "Returns the TLE data for a given satellite in JSON or text format.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "format": {"description": "Response format (json or text).", "required": false, "default": "json"}}}, "coordinates": {"path": "/coordinates/{lat},{lon}", "description":
+I need to find the coordinates of the ISS.
 
 

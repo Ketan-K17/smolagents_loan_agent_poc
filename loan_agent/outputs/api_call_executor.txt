@@ -73,67 +73,10 @@ api_request = {
 Ensure that your answer only has the JSON object, and no other text accompanying it. Make sure there's nothing like json, or '''json''' or '''json''' or anything like that.
 
 Here are the user query and the list of documents you need to use to construct the API request: 
-Here is the user query: I need to find the coordinates of the ISS>Here is the list of documents: ['{"wheretheiss": {"description": "This API provides real-time tracking information for the International Space Station and other satellites.", "base_url": "https://api.wheretheiss.at/v1", "endpoints": {"satellites": {"path": "/satellites", "description": "Returns a list of satellites with their common names and NORAD catalog IDs.", "parameters": {}}, "satellite_by_id": {"path": "/satellites/{id}", "description": "Returns position, velocity, and other related information about a satellite for a given point in', '"Returns position, velocity, and other related information about a satellite for a given point in time.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "units": {"description": "Units for measurements (kilometers or miles).", "required": false, "default": "kilometers"}, "timestamp": {"description": "Specific timestamp for orbital position.", "required": false, "default": "current timestamp"}}}, "satellite_positions": {"path": "/satellites/{id}/positions",', 'false, "default": "json"}}}, "coordinates": {"path": "/coordinates/{lat},{lon}", "description": "Returns position, current time offset, country code, and timezone ID for given coordinates.", "parameters": {"lat": {"description": "Latitude of the location.", "required": true}, "lon": {"description": "Longitude of the location.", "required": true}}}}}}', '"default": "current timestamp"}}}, "satellite_positions": {"path": "/satellites/{id}/positions", "description": "Returns a list of positions and velocities for a satellite at specified timestamps.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "timestamps": {"description": "Comma-delimited list of timestamps (up to 10).", "required": true}, "units": {"description": "Units for measurements (kilometers or miles).", "required": false, "default":', '{"description": "Units for measurements (kilometers or miles).", "required": false, "default": "kilometers"}}}, "satellite_tles": {"path": "/satellites/{id}/tles", "description": "Returns the TLE data for a given satellite in JSON or text format.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "format": {"description": "Response format (json or text).", "required": false, "default": "json"}}}, "coordinates": {"path": "/coordinates/{lat},{lon}", "description":']
+Here is the user query: i need coordinates of the ISS.Here is the list of documents: ['{"wheretheiss": {"description": "This API provides real-time tracking information for the International Space Station and other satellites.", "base_url": "https://api.wheretheiss.at/v1", "endpoints": {"satellites": {"path": "/satellites", "description": "Returns a list of satellites with their common names and NORAD catalog IDs.", "parameters": {}}, "satellite_by_id": {"path": "/satellites/{id}", "description": "Returns position, velocity, and other related information about a satellite for a given point in', '"default": "current timestamp"}}}, "satellite_positions": {"path": "/satellites/{id}/positions", "description": "Returns a list of positions and velocities for a satellite at specified timestamps.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "timestamps": {"description": "Comma-delimited list of timestamps (up to 10).", "required": true}, "units": {"description": "Units for measurements (kilometers or miles).", "required": false, "default":', 'false, "default": "json"}}}, "coordinates": {"path": "/coordinates/{lat},{lon}", "description": "Returns position, current time offset, country code, and timezone ID for given coordinates.", "parameters": {"lat": {"description": "Latitude of the location.", "required": true}, "lon": {"description": "Longitude of the location.", "required": true}}}}}}', '"Returns position, velocity, and other related information about a satellite for a given point in time.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "units": {"description": "Units for measurements (kilometers or miles).", "required": false, "default": "kilometers"}, "timestamp": {"description": "Specific timestamp for orbital position.", "required": false, "default": "current timestamp"}}}, "satellite_positions": {"path": "/satellites/{id}/positions",', '{"description": "Units for measurements (kilometers or miles).", "required": false, "default": "kilometers"}}}, "satellite_tles": {"path": "/satellites/{id}/tles", "description": "Returns the TLE data for a given satellite in JSON or text format.", "parameters": {"id": {"description": "NORAD catalog ID of the satellite.", "required": true}, "format": {"description": "Response format (json or text).", "required": false, "default": "json"}}}, "coordinates": {"path": "/coordinates/{lat},{lon}", "description":']
 
 
 HERE'S THE LLM RESPONSE:
-{
-    "endpoint": "/satellites/25544",
-    "base_url": "https://api.wheretheiss.at/v1",
-    "method": "GET"
-}
-
-
-HERE'S THE COMPLETE API REQUEST:
-{
-  "endpoint": "/satellites/25544",
-  "base_url": "https://api.wheretheiss.at/v1",
-  "method": "GET",
-  "params": {},
-  "data": {},
-  "headers": {},
-  "json_data": {},
-  "timeout": 30
-}
-
-
-HERE'S THE API RESPONSE:
-{
-  "status_code": 200,
-  "content": {
-    "name": "iss",
-    "id": 25544,
-    "latitude": -45.723724231966,
-    "longitude": -121.10519810102,
-    "altitude": 432.91384645698,
-    "velocity": 27543.145807027,
-    "visibility": "daylight",
-    "footprint": 4572.5883059022,
-    "timestamp": 1737309648,
-    "daynum": 2460695.2505556,
-    "solar_lat": -20.166664514017,
-    "solar_lon": 272.51700716625,
-    "units": "kilometers"
-  },
-  "headers": {
-    "Date": "Sun, 19 Jan 2025 18:00:48 GMT",
-    "Server": "Apache/2.2.22 (Ubuntu)",
-    "X-Powered-By": "PHP/5.3.10-1ubuntu3.26",
-    "X-Rate-Limit-Limit": "350",
-    "X-Rate-Limit-Remaining": "349",
-    "X-Rate-Limit-Interval": "5 minutes",
-    "Access-Control-Allow-Origin": "*",
-    "X-Apache-Time": "D=14868",
-    "Cache-Control": "max-age=0, no-cache",
-    "Content-Length": "314",
-    "Keep-Alive": "timeout=15, max=100",
-    "Connection": "Keep-Alive",
-    "Content-Type": "application/json"
-  }
-}
-
-
-NATURAL LANGUAGE INTERPRETATION:
-The current coordinates of the International Space Station (ISS) are latitude: -45.723724231966 and longitude: -121.10519810102. This information is accurate as of the timestamp 1737309648. Please note that the ISS is constantly moving, so these coordinates will change rapidly. If you need the most up-to-date information, you may want to check again shortly.
+The current coordinates of the ISS are latitude: -15.838680918806 and longitude: 19.820926424941
 
 

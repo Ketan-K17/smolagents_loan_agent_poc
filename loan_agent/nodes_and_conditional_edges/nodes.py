@@ -37,7 +37,7 @@ def prompt_parser(state: State) -> State:
     # Combine system prompt with user prompt
     combined_prompt = sys_prompt + user_prompt
     # Write the combined prompt to a file
-    output_path = "/Users/ketankunkalikar/Desktop/tmt/spaider-agent-template/loan_agent/outputs/prompt_parser.txt"
+    output_path = "/Users/ketankunkalikar/Desktop/tmt/loan_agent_poc/loan_agent/outputs/prompt_parser.txt"
     try:
         # Create directory if it doesn't exist
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -69,7 +69,7 @@ def prompt_parser(state: State) -> State:
 
     # call query_chromadb tool
     list_of_docs = query_chromadb(
-            "/Users/ketankunkalikar/Desktop/tmt/spaider-agent-template/ingest_data/mychroma_db",  # Use path from config
+            "/Users/ketankunkalikar/Desktop/tmt/loan_agent_poc/ingest_data/mychroma_db",  # Use path from config
             "sentence-transformers/all-MiniLM-L6-v2",  # Use model setting from config
             vectordb_query
             )
@@ -98,7 +98,7 @@ def api_call_executor(state: State):
     user_query = state["user_prompt"]
     sys_prompt = f"{API_CALL_EXECUTOR_PROMPT}Here is the user query: {user_query}Here is the list of documents: {list_of_docs}"
     
-    output_path = "/Users/ketankunkalikar/Desktop/tmt/spaider-agent-template/loan_agent/outputs/api_call_executor.txt"
+    output_path = "/Users/ketankunkalikar/Desktop/tmt/loan_agent_poc/loan_agent/outputs/api_call_executor.txt"
     try:
         # Create directory if it doesn't exist
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
